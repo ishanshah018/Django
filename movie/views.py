@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from gc import get_objects
+from django.shortcuts import render,get_object_or_404
 from .models import Movie
 
 # Create your views here.
@@ -13,3 +14,7 @@ def Home(request):
         movies=Movie.objects.all()
         
     return render(request,'home.html',{'searchTerm':searchTerm,'movies':movies})
+
+def detail(request,title):
+    movie=get_object_or_404(Movie,title=title)
+    return render(request,'detail.html',{'movie':movie})
