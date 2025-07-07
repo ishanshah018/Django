@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Movies App</title>
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    crossorigin="anonymous"
-/>
-</head>
+{% extends "base.html" %}
+{% block content %}
 
-<body>
-<div class="container">
     {% for news in newss %}
     <div class="card mb-3">
     <div class="row g-0">
@@ -26,6 +16,5 @@
     </div>
     </div>
     {% endfor %}
-</div>
-</body>
-</html>
+
+{% endblock content %}
